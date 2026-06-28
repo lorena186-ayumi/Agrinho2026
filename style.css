@@ -1,3 +1,12 @@
+body{
+  background-color: rgb(147, 255, 47);
+color: black;
+margin: 0;
+padding: 20px;
+min-height: 100vh;
+max-width: 1400px;
+margin: auto;
+}
 p{
     text-align: center;
 }
