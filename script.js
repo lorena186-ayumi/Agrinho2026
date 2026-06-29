@@ -13,3 +13,18 @@ function verificar() {
         resultado.innerHTML = "Resposta incorreta. A alternativa correta é a letra C.";
     }
 }
+const botao = document.getElementById("bntSaibamais");
+
+botao.addEventListener("click", function(){
+
+    const texto = document.getElementById("texto");
+
+    if(texto.style.display === "none"){
+        texto.style.display = "block";
+        botao.innerHTML = "Mostrar menos";
+    }else{
+        texto.style.display = "none";
+        botao.innerHTML = "Saiba mais";
+    }
+
+});
