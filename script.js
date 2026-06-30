@@ -1,35 +1,33 @@
 // 1. função do quizz (Fica no topo para o botão do HTML conseguir encontrá-la)
-function validarQuiz() {
-    const r1 = document.querySelector('input[name="q1"]:checked');
-    const r2 = document.querySelector('input[name="q2"]:checked');
-    const feedback = document.getElementById("feedback-quiz");
+function validarQuiz() { // cria a função que verifica a resposta do quiz
+    const r1 = document.querySelector('input[name="q1"]:checked'); // pega a resposta marcada da pergunta 1
+    const r2 = document.querySelector('input[name="q2"]:checked'); // pega a resposta marcada da pergunta 2
+    const feedback = document.getElementById("feedback-quiz"); // pega a área onde aparece o resultado
 
-    // Verifica se as duas perguntas foram respondidas
-    if (!r1 || !r2) {
+    if (!r1 || !r2) { // verifica se as duas perguntas foram respondidas
         feedback.innerHTML = "<span style='color: orange;'> Por favor, escolha uma alternativa para as duas perguntas.</span>";
-        return;
+        return; // avisa o usuário
     }
 
-    let acertos = 0;
+    let acertos = 0; // conta os acertos
     
-    if (r1.value === "c") acertos++;  // Resposta correta da P1 é C
+    if (r1.value === "c") acertos++;  // resposta correta da P1 é C
     
-    if (r2.value === "b") acertos++; // Resposta correta da P2 é B
+    if (r2.value === "b") acertos++; // resposta correta da P2 é B
 
-    // mostra o resultado final
-    if (acertos === 2) {
-        feedback.innerHTML = `<span style='color: #71E86B;'> Parabéns! Acertou nas 2 questões!</span>`;
+    if (acertos === 2) { // mostra o resultado final
+        feedback.innerHTML = `<span style='color: #71E86B;'> Parabéns! Acertou nas 2 questões!</span>`; // mensagem quando acerta as quetões
     } else {
-        feedback.innerHTML = `<span style='color: #ff4444;'>Acertou ${acertos} de 2. Tente corrigir as que errou!</span>`;
+        feedback.innerHTML = `<span style='color: #ff4444;'>Acertou ${acertos} de 2. Tente corrigir as que errou!</span>`;// mensagem quando erra as quetões
     }
 }
 
 // 2. TODO O RESTO DO CÓDIGO SÓ ARRANCA QUANDO O SITE ESTIVER 100% CARREGADO
 document.addEventListener("DOMContentLoaded", function() {
     
-    /* ======================================================= 
+    /*
        SISTEMA DE LOGIN E DESFOQUE
-       ======================================================= */
+       /
     const btnEntrar = document.getElementById("btn-entrar");
     const inputNome = document.getElementById("input-nome");
     const overlay = document.getElementById("overlay-entrada");
@@ -123,8 +121,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 btnQuiz.innerText = "Ocultar Quiz";
                 btnInfo.innerText = "Saiba mais";
             } else {
-                secQuiz.classList.add("oculto");
-                btnQuiz.innerText = "Responder Quiz";
+                secQuiz.classList.add("oculto"); // esconde o quiz
+                btnQuiz.innerText = "Responder Quiz"; //
             }
         });
     }
