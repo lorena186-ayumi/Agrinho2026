@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (btnTema) {
         btnTema.addEventListener("click", () => {
             document.body.classList.toggle("dark-mode");
-            btnTema.innerText = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+            btnTema.innerText = document.body.classList.contains("dark-mode") ? "☀️" : "🌗";
         });
     }
 
