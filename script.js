@@ -1,8 +1,8 @@
-// 1. função do quizz (Fica no topo para o botão do HTML conseguir encontrá-la)
-function validarQuiz() { // cria a função que verifica a resposta do quiz
-    const r1 = document.querySelector('input[name="q1"]:checked'); // pega a resposta marcada da pergunta 1
-    const r2 = document.querySelector('input[name="q2"]:checked'); // pega a resposta marcada da pergunta 2
-    const feedback = document.getElementById("feedback-quiz"); // pega a área onde aparece o resultado
+// função do quizz 
+function validarQuiz() { // resposta do quiz
+    const r1 = document.querySelector('input[name="q1"]:checked'); // resposta 1
+    const r2 = document.querySelector('input[name="q2"]:checked'); // resposta 2
+    const feedback = document.getElementById("feedback-quiz"); // resultado
 
     if (!r1 || !r2) { // verifica se as duas perguntas foram respondidas
         feedback.innerHTML = "<span style='color: orange;'> Por favor, escolha uma alternativa para as duas perguntas.</span>";
