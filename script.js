@@ -1,4 +1,4 @@
-// 1. FUNÇÃO DO QUIZ (Fica no topo para o botão do HTML conseguir encontrá-la)
+// 1. função do quizz (Fica no topo para o botão do HTML conseguir encontrá-la)
 function validarQuiz() {
     const r1 = document.querySelector('input[name="q1"]:checked');
     const r2 = document.querySelector('input[name="q2"]:checked');
@@ -6,21 +6,19 @@ function validarQuiz() {
 
     // Verifica se as duas perguntas foram respondidas
     if (!r1 || !r2) {
-        feedback.innerHTML = "<span style='color: orange;'>⚠️ Por favor, escolha uma alternativa para as duas perguntas.</span>";
+        feedback.innerHTML = "<span style='color: orange;'> Por favor, escolha uma alternativa para as duas perguntas.</span>";
         return;
     }
 
     let acertos = 0;
     
-    // Resposta correta da P1 é C
-    if (r1.value === "c") acertos++;
+    if (r1.value === "c") acertos++;  // Resposta correta da P1 é C
     
-    // Resposta correta da P2 é B
-    if (r2.value === "b") acertos++;
+    if (r2.value === "b") acertos++; // Resposta correta da P2 é B
 
-    // Mostra o resultado final
+    // mostra o resultado final
     if (acertos === 2) {
-        feedback.innerHTML = `<span style='color: #71E86B;'>🏆 Parabéns! Acertou nas 2 questões!</span>`;
+        feedback.innerHTML = `<span style='color: #71E86B;'> Parabéns! Acertou nas 2 questões!</span>`;
     } else {
         feedback.innerHTML = `<span style='color: #ff4444;'>Acertou ${acertos} de 2. Tente corrigir as que errou!</span>`;
     }
