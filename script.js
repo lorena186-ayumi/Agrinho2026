@@ -22,17 +22,17 @@ function validarQuiz() { // cria a função que verifica a resposta do quiz
     }
 }
 
-// 2. TODO O RESTO DO CÓDIGO SÓ ARRANCA QUANDO O SITE ESTIVER 100% CARREGADO
+// espera o site carregar completamente
 document.addEventListener("DOMContentLoaded", function() {
     
-    /*SISTEMA DE LOGIN E DESFOQUE*/
+    /*login do usuário*/
     const btnEntrar = document.getElementById("btn-entrar");
     const inputNome = document.getElementById("input-nome");
     const overlay = document.getElementById("overlay-entrada");
     const main = document.getElementById("main-content");
     const spanNome = document.getElementById("user-name");
 
-    // Função para entrar no site
+    // função para entrar no site
     function entrarNoSite() {
         const nome = inputNome.value.trim();
         if (nome !== "") {
@@ -44,12 +44,12 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Ativa ao clicar no botão "Entrar"
+    // ativa ao clicar no botão "Entrar"
     if (btnEntrar) {
         btnEntrar.addEventListener("click", entrarNoSite);
     }
 
-    // Ativa ao carregar na tecla "Enter" no teclado
+    // ativa ao carregar na tecla "Enter" no teclado
     if (inputNome) {
         inputNome.addEventListener("keypress", function(evento) {
             if (evento.key === "Enter") {
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    /*CONTROLO DE TEMA E FONTE*/
+    /*tema e tamanho da fonte*/
     const btnTema = document.getElementById("btn-tema");
     let escalaFonte = 100;
 
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    /*  LÓGICA MOSTRAR/OCULTAR (SAIBA MAIS E QUIZ)*/
+    /*  botões de saiba mais e quiz*/
     const btnInfo = document.getElementById("btn-saiba-mais");
     const btnQuiz = document.getElementById("btn-abrir-quiz");
     const secInfo = document.getElementById("info-agro");
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function() {
         btnInfo.addEventListener("click", () => {
             if (secInfo.classList.contains("oculto")) {
                 secInfo.classList.remove("oculto");
-                secQuiz.classList.add("oculto"); // Fecha o quiz se estiver aberto
+                secQuiz.classList.add("oculto"); // fecha o quiz se estiver aberto
                 btnInfo.innerText = "Mostrar menos";
                 btnQuiz.innerText = "Responder Quiz";
             } else {
@@ -111,12 +111,12 @@ document.addEventListener("DOMContentLoaded", function() {
         btnQuiz.addEventListener("click", () => {
             if (secQuiz.classList.contains("oculto")) {
                 secQuiz.classList.remove("oculto");
-                secInfo.classList.add("oculto"); // Fecha a info se estiver aberta
+                secInfo.classList.add("oculto"); // fecha a parte de informações se estiver aberta
                 btnQuiz.innerText = "Ocultar Quiz";
                 btnInfo.innerText = "Saiba mais";
             } else {
                 secQuiz.classList.add("oculto"); // esconde o quiz
-                btnQuiz.innerText = "Responder Quiz"; //
+                btnQuiz.innerText = "Responder Quiz";
             }
         });
     }
