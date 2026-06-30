@@ -25,9 +25,7 @@ function validarQuiz() { // cria a função que verifica a resposta do quiz
 // 2. TODO O RESTO DO CÓDIGO SÓ ARRANCA QUANDO O SITE ESTIVER 100% CARREGADO
 document.addEventListener("DOMContentLoaded", function() {
     
-    /*
-       SISTEMA DE LOGIN E DESFOQUE
-       /
+    /*SISTEMA DE LOGIN E DESFOQUE*/
     const btnEntrar = document.getElementById("btn-entrar");
     const inputNome = document.getElementById("input-nome");
     const overlay = document.getElementById("overlay-entrada");
@@ -60,9 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    /* ======================================================= 
-       CONTROLO DE TEMA E FONTE
-       ======================================================= */
+    /*CONTROLO DE TEMA E FONTE*/
     const btnTema = document.getElementById("btn-tema");
     let escalaFonte = 100;
 
@@ -93,9 +89,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    /* ======================================================= 
-       LÓGICA MOSTRAR/OCULTAR (SAIBA MAIS E QUIZ)
-       ======================================================= */
+    /*  LÓGICA MOSTRAR/OCULTAR (SAIBA MAIS E QUIZ)*/
     const btnInfo = document.getElementById("btn-saiba-mais");
     const btnQuiz = document.getElementById("btn-abrir-quiz");
     const secInfo = document.getElementById("info-agro");
